@@ -1,0 +1,19 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "media-tool"
+version = "0.1.0"
+description = "A command line program to automate importing and organizing media files written in python"
+requires-python = ">=3.12, <3.13"
+dependencies = ["click", "tqdm", "PyExifTool"]
+
+[dependency-groups]
+dev = ["pytest>=8.3.5"]
+
+[project.scripts]
+mtool = "media_tool.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/media_tool"]
