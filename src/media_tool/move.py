@@ -10,7 +10,9 @@ from multiprocessing import Pool, cpu_count
 RAW_EXTENSIONS = [".raf", ".arw", ".dng", ".cr2", ".nef", ".orf", ".rw2"]
 VIDEO_EXTENSIONS = [".mp4", ".mov", ".avi", ".mkv", ".m4v"]
 IMAGE_EXTENSIONS = (
-    [".jpg", ".jpeg", ".png", ".tiff"] + RAW_EXTENSIONS + VIDEO_EXTENSIONS
+    [".jpg", ".jpeg", ".png", ".tiff", ".hif", ".heic"]
+    + RAW_EXTENSIONS
+    + VIDEO_EXTENSIONS
 )
 
 
