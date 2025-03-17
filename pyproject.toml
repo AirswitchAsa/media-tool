@@ -10,7 +10,10 @@ requires-python = ">=3.12, <3.13"
 dependencies = ["click", "tqdm", "PyExifTool"]
 
 [dependency-groups]
-dev = ["pytest>=8.3.5"]
+dev = [
+    "notebook>=7.3.3",
+    "pytest>=8.3.5",
+]
 
 [project.scripts]
 mtool = "media_tool.cli:main"
