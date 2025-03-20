@@ -54,10 +54,6 @@ def process_single_image(args):
     """Process a single media file - used by the multiprocessing pool."""
     image_file, target_path, by_month, dry_run = args
     try:
-        # Skip if the file is already in a date-formatted folder
-        if any(parent.name.replace("-", "").isdigit() for parent in image_file.parents):
-            return f"Skipping {image_file.name}: already in a date folder"
-
         creation_date = get_exif_creation_date_pyexiftool(
             str(image_file)
         ) or get_file_creation_date(image_file)
