@@ -6,17 +6,20 @@ build-backend = "hatchling.build"
 name = "media-tool"
 version = "0.1.0"
 description = "A command line program to automate importing and organizing media files written in python"
-requires-python = ">=3.12, <3.13"
+requires-python = ">=3.11, <3.12"
 dependencies = ["click", "tqdm", "PyExifTool"]
 
+[project.optional-dependencies]
+ml = ["imagededup"]
+
 [dependency-groups]
-dev = [
-    "notebook>=7.3.3",
-    "pytest>=8.3.5",
-]
+dev = ["notebook>=7.3.3", "pytest>=8.3.5"]
 
 [project.scripts]
 mtool = "media_tool.cli:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/media_tool"]
+
+[tool.uv.sources]
+imagededup = { path = "./imagededup-0.3.2" }
